@@ -20,12 +20,13 @@ function counter() {
   otroContador()      // 2
   otroContador()      // 3
    */
-  var cont = 0;
-  return function(){
-    cont++;
-    return cont;
+var cont = 0;
+return function(){
+  cont++;
+  return cont;
+}
 
-  }
+
 }
 /*var contOne = conunter();
 contOne ();*/
@@ -51,13 +52,13 @@ function cacheFunction(cb) {
   y lo retornará (tip: si usaste un objeto, podés usar hasOwnProperty) 
 
   */
- var cache = {}
+ var cache={};
  return function(arg){
-  if (cache.hasOwnProperty(arg)){
-    return cache[arg];
-  }else{
+  if(cache.hasOwnProperty(arg)){
+    return cache[arg]
+  } else{
     cache[arg] = cb(arg);
-    return cache[arg];
+   return cache[arg];
   }
  }
 }
@@ -90,7 +91,7 @@ function getNombre() {
   getNombre pero retornen el nombre del instructor y del alumno, respectivamente.
 */
 
-let getNombreInstructor = getNombre.bind(instructor);
+let getNombreInstructor =  getNombre.bind(instructor);
 let getNombreAlumno = getNombre.bind(alumno);
 
 /*
@@ -106,7 +107,7 @@ function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
   return delimitadorIzquierda + cadena + delimitadorDerecha;
 }
 
-let textoAsteriscos = crearCadena.bind(this,'*','*');
+let textoAsteriscos = crearCadena.bind(this,'*','*') ;
 let textoGuiones = crearCadena.bind(this,'-','-');
 let textoUnderscore = crearCadena.bind(this,'_','_');
 
