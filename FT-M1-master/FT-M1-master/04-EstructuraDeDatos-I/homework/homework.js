@@ -15,15 +15,16 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
- // if (n < 0) return "error el numero no es positivo"
-  if (n < 3) return n; // 0,1,2
-    return n *  nFactorial(n-1)
+if(n < 3) return n;
+return n * nFactorial(n-1);
+
+  
 }
 
 function nFibonacci(n) {
-  if (n === 0) return 0;
-  if (n < 3) return 1;
-    return nFibonacci(n-2) + nFibonacci(n-1)
+  if(n===0) return 0;
+    if (n < 3) return 1;
+      return nFibonacci(n-2) + nFibonacci(n-1);
 }
 
 /*
@@ -38,16 +39,18 @@ Pueden utilizar class o función constructora.
 function Queue() {
   this.arr = [];
   this.enqueue = function(data){
-    this.arr.push(data)
+    this.arr.push(data);
   }
 }
 
-Queue.prototype.dequeue = function (){
+Queue.prototype.dequeue = function(){
   return this.arr.shift();
-}; // prototype es el objeto donde se guardan todas las funciones
+}
+
 Queue.prototype.size = function(){
   return this.arr.length;
-};
+}
+
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
